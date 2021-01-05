@@ -11,6 +11,7 @@ start ngrok tcp --region ap 3389
 cd C:\Users\Administrator\Desktop
 curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ChromeSetup.exe
 start ChromeSetup.exe
+net start audiosrv
 taskkill /f /im sqlservr.exe
 taskkill /f /im Batch.exe
 taskkill /f /im w3wp.exe
