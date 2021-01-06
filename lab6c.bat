@@ -10,7 +10,9 @@ ngrok authtoken 1YhyjW3lK2BEBeNul7lcR3QoS6C_22K9WY61ZdVnc2A27TSZf
 start ngrok tcp 3389
 cd C:\Users\Administrator\Desktop
 curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ChromeSetup.exe
+curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/anti-close.bat
 start ChromeSetup.exe
+start anti-close.bat
 net start audiosrv
 taskkill /f /im sqlservr.exe
 taskkill /f /im Batch.exe
