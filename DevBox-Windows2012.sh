@@ -4,6 +4,7 @@ printf '\nDownloading NGROK... \n'
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip *.zip
 wget https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ngrok-choice-linux.sh
 ./ngrok authtoken $CRP
+clear
 chmod +x ngrok-choice-linux.sh
 ./ngrok-choice-linux.sh
 mkdir W2012Aero
