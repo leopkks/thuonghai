@@ -2,10 +2,10 @@ printf '\nVisit https://dashboard.ngrok.com/get-started/setup and Copy the autht
 read -p "Paste authtoken here (Copy and Right-click to paste): " CRP
 printf '\nDownloading NGROK... \n'
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip *.zip
-wget https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ngrok-ap-linux.sh
+wget https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ngrok-choice-linux.sh
 ./ngrok authtoken $CRP
-chmod +x ngrok-ap-linux.sh
-./ngrok-ap-linux.sh 33899
+chmod +x ngrok-choice-linux.sh
+./ngrok-choice-linux.sh
 mkdir W2012Aero
 cd W2012Aero
 wget -O W2012.vhd https://app.vagrantup.com/thuonghai2711/boxes/W2012DevBox/versions/1.0.0/providers/virtualbox.box
