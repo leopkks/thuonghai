@@ -1,5 +1,11 @@
 printf '\nVisit https://dashboard.ngrok.com/get-started/setup and Copy the authtoken \n'
 read -p "Paste authtoken here (Copy and Right-click to paste): " CRP
+printf '\nDownloading NGROK... \n'
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip *.zip
+wget https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ngrok-ap-linux.sh
+./ngrok authtoken $CRP
+chmod +x ngrok-ap-linux.sh
+./ngrok-ap-linux.sh 33899
 mkdir W2012Aero
 cd W2012Aero
 wget -O W2012.vhd https://app.vagrantup.com/thuonghai2711/boxes/W2012DevBox/versions/1.0.0/providers/virtualbox.box
@@ -13,14 +19,9 @@ vboxmanage storagectl W2012 --name "SATA Controller" --add sata --controller Int
 vboxmanage storageattach W2012 --storagectl "SATA Controller" --device 0 --port 0 --type hdd --medium /home/developer/W2012Aero/W2012.vhd
 VBoxManage startvm "W2012" --type headless
 clear
-printf '\nDownloading NGROK... \n'
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip *.zip
-wget https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ngrok-ap-linux.sh
-./ngrok authtoken $CRP
-./ngrok-ap-linux.sh 33899
-clear
 echo All done! Connect your VM using RDP.
-echo "IP: [ $NGROK_PUBLIC_URL ]"
+echo IP:
+curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo User: Administrator
 echo Pass: Thuonghai001
 echo Finished! You can Close PUTTY now.
