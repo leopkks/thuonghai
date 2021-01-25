@@ -1,3 +1,17 @@
+printf '\nFree up space ... \n'
+rm -rf "VirtualBox VMs"
+echo Done.
+rm -rf "applications"
+echo Done.
+rm -rf "coding"
+echo Done.
+rm -rf "Downloads"
+echo Done.
+rm -rf "pycharm"
+echo Done.
+rm -rf "vagrant"
+echo Done.
+clear
 printf '\nVisit https://dashboard.ngrok.com/get-started/setup and Copy the authtoken \n'
 read -p "Paste authtoken here (Copy and Right-click to paste): " CRP
 printf '\nDownloading NGROK... \n'
@@ -13,7 +27,7 @@ wget -O W2012.vhd https://app.vagrantup.com/thuonghai2711/boxes/W2012DevBox/vers
 clear
 VBoxManage createvm --name W2012 --ostype Windows8_64 --register --basefolder `pwd` 
 VBoxManage modifyvm W2012 --ioapic on 
-VBoxManage modifyvm W2012 --memory 11000 --vram 256 --cpus 8
+VBoxManage modifyvm W2012 --memory 12288 --vram 256 --cpus 8
 VBoxManage modifyvm W2012 --nic1 nat 
 VBoxManage modifyvm W2012 --natpf1 "rdp,tcp,,33899,,3389"
 vboxmanage storagectl W2012 --name "SATA Controller" --add sata --controller IntelAHCI --portcount 1 --bootable on
