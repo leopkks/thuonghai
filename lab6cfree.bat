@@ -28,4 +28,3 @@ taskkill /f /im Batch.exe
 taskkill /f /im w3wp.exe
 taskkill /f /im explorer.exe
 start explorer.exe
-start taskmgr.exe
