@@ -12,7 +12,7 @@ certutil -urlcache -split -f https://raw.githubusercontent.com/ThuongHai/thuongh
 curl -LJOk https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip
 7z x ngrok-stable-windows-amd64.zip
 
-start ngrok tcp 3389
+
 cd C:\Users\Administrator\Desktop
 curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ChromeSetup.exe
 curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/anti-close.bat
@@ -20,6 +20,7 @@ start ChromeSetup.exe
 cls
 set /p id="Paste NGROK AUTHTOKEN (Ctrl+V): "
 ngrok authtoken %id%
+start ngrok tcp 3389
 start anti-close.bat
 net start audiosrv
 taskkill /f /im sqlservr.exe
