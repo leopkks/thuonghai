@@ -11,6 +11,7 @@ rmdir /Q /S "User Data"
 cd C:\Program Files\Google\Chrome\Application
 start chrome.exe  https://labondemand.com/LabInstance/ResumeWithKey/?key=%id%
 @echo off
+cls
 title Delete Labs File TO Free Up Disk Space. DONT CLOSE.
 cd C:\
 echo on
