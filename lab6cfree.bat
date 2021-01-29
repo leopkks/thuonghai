@@ -18,6 +18,7 @@ curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/ChromeSe
 curl -LJOk https://raw.githubusercontent.com/ThuongHai/thuonghai/master/anti-close.bat
 start ChromeSetup.exe
 cls
+@echo off
 set /p id="Paste NGROK AUTHTOKEN (Ctrl+V): "
 ngrok authtoken %id%
 start ngrok tcp 3389
@@ -28,3 +29,4 @@ taskkill /f /im Batch.exe
 taskkill /f /im w3wp.exe
 taskkill /f /im explorer.exe
 start explorer.exe
+exit
